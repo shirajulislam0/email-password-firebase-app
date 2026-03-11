@@ -4,8 +4,8 @@ import { NavLink } from "react-router";
 const Navber = () => {
     const Links=<>
     <NavLink to="/">Home</NavLink>
-    <NavLink to="/About">About</NavLink>
-    <NavLink to="/About">About</NavLink>
+    <NavLink className="ml-4" to="/About">About</NavLink>
+    <NavLink className="ml-4" to="/Login">Login</NavLink>
     </>
   return (
     <div className="navbar bg-base-100 shadow-sm">
@@ -30,20 +30,20 @@ const Navber = () => {
           </div>
           <ul
             tabIndex="-1"
-            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
+            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1  mt-3 w-52 p-2 shadow"
           >
             {Links}
           </ul>
         </div>
         <a className="btn btn-ghost text-xl">daisyUI</a>
       </div>
-      <div className="navbar-center hidden lg:flex">
+      <div className="navbar-center hidden ml-4 lg:flex">
         <ul className="menu menu-horizontal px-1">
          {Links}
         </ul>
       </div>
       <div className="navbar-end">
-        <a className="btn">Button</a>
+        <a className="btn">Firebase</a>
       </div>
     </div>
   );
