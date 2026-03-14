@@ -6,6 +6,7 @@ const Navber = () => {
     <NavLink to="/">Home</NavLink>
     <NavLink className="ml-4" to="/About">About</NavLink>
     <NavLink className="ml-4" to="/Login">Login</NavLink>
+    <NavLink className="ml-4" to="/Registation">registation</NavLink>
     </>
   return (
     <div className="navbar bg-base-100 shadow-sm">
