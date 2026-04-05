@@ -1,11 +1,42 @@
-import React from 'react';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
+import React, { useState } from 'react';
+import { auth } from '../firebase.init';
 
 const Registation = () => {
+  const[error,setError]=useState('')
+  const[success,setSuccess]=useState(false)
   const handelSumbit=(e)=>{
     e.preventDefault();
  const email=e.target.email.value
  const pass=e.target.password.value
+//  validation start
+if(!email){
+  setError('Email is requard')
+}
+if(!email.includes("@")){
+  setError("invalid email")
+
+
+}
+if(pass.length<6){
+  setError("Password must be at least 6 characters")
+  
+}
+// resat error
+setError('')
+setSuccess(false)
+// validation end
     console.log("then button is now submitted ",email,pass)
+    createUserWithEmailAndPassword(auth,email,pass)
+    .then( result=>{
+      console.log(result.user)
+      setSuccess(true)
+      e.target.reset()
+    })
+    .catch((error)=>{
+      console.log("error already happend",error)
+      setError(error.message)
+    })
   }
   return (
     <div className="hero bg-base-200 min-h-screen">
@@ -26,6 +57,9 @@ const Registation = () => {
           <div><a className="link link-hover">Forgot password?</a></div>
           <button className="btn btn-neutral mt-4">Registation</button>
         </fieldset>
+        {success&& <p style={{color:"green"}}>Account create successfully</p>}
+        {error && <p style={{ color: "red" }}>{error}</p>}
+        
         </form>
       </div>
     </div>
