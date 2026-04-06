@@ -9,6 +9,13 @@ const Registation = () => {
     e.preventDefault();
  const email=e.target.email.value
  const pass=e.target.password.value
+ const pattern =
+    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&]).{6,}$/;
+     if (!pattern.test(pass)) {
+    setError("Password must have uppercase, lowercase, number & special character");
+    return;
+  }
+
 //  validation start
 if(!email){
   setError('Email is requard')
@@ -17,10 +24,6 @@ if(!email.includes("@")){
   setError("invalid email")
 
 
-}
-if(pass.length<6){
-  setError("Password must be at least 6 characters")
-  
 }
 // resat error
 setError('')
