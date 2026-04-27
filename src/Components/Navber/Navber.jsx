@@ -36,7 +36,9 @@ const Navber = () => {
             {Links}
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl">daisyUI</a>
+        <a className="btn btn-ghost text-xl">
+          <img src="/src/assets/react.svg" alt="" />
+        </a>
       </div>
       <div className="navbar-center hidden ml-4 lg:flex">
         <ul className="menu menu-horizontal px-1">

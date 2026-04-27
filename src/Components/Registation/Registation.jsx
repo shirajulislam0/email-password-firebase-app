@@ -5,6 +5,7 @@ import { auth } from '../firebase.init';
 const Registation = () => {
   const[error,setError]=useState('')
   const[success,setSuccess]=useState(false)
+  const[showPassword, setShowPassword]=useState(false)
   const handelSumbit=(e)=>{
     e.preventDefault();
  const email=e.target.email.value
@@ -22,7 +23,6 @@ if(!email){
 }
 if(!email.includes("@")){
   setError("invalid email")
-
 
 }
 // resat error
@@ -54,9 +54,16 @@ setSuccess(false)
           <label className="label">Email</label>
           <input type="email" className="input"
           name='email' placeholder="Email" />
+
+          <div className='relative'>
           <label className="label">Password</label>
           <input type="password" className="input"
           name='password' placeholder="Password" />
+          <button
+          onClick={()=>{setShowPassword(!showPassword)}}
+           className="btn btn-sm absolute  right-3 ">Small</button>
+          </div>
+
           <div><a className="link link-hover">Forgot password?</a></div>
           <button className="btn btn-neutral mt-4">Registation</button>
         </fieldset>
