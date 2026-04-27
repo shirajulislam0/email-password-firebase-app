@@ -42,7 +42,14 @@ setSuccess(false)
     })
   }
   return (
-    <div className="hero bg-base-200 min-h-screen">
+    <div className="hero bg-base-200 min-h-screen"
+    className="hero min-h-screen relative"
+      style={{
+        backgroundImage: `url(${"/src/assets/mohammad-rahmani-nBXwqxjDa5c-unsplash.jpg"})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+      }}>
+      
   <div className="hero-content flex-col lg:flex-row-reverse">
     <div className="text-center lg:text-left">
     
