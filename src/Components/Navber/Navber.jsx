@@ -37,7 +37,7 @@ const Navber = () => {
           </ul>
         </div>
         <a className="btn btn-ghost text-xl">
-          <img src="/src/assets/react.svg" alt="" />
+          <h2>sirajul</h2>
         </a>
       </div>
       <div className="navbar-center hidden ml-4 lg:flex">
